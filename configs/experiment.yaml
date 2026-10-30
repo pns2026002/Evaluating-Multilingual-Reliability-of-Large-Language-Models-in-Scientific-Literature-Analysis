@@ -1,0 +1,14 @@
+project: multilingual_scientific_retrieval
+seed: 42
+dataset: scifact
+split: test
+languages: [en, hi]
+top_k: [1, 5, 10]
+mrr_k: 10
+methods:
+  bm25: lexical baseline
+  english_dense: sentence-transformers/all-MiniLM-L6-v2
+  multilingual_dense: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+corpus_language: en
+primary_metric: Recall@5
+translation_policy: Hindi query translations must be saved, ID-aligned, and human-reviewed where possible
